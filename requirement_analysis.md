@@ -198,7 +198,7 @@ People who are reading books and using mobile / social apps and want to educate 
   
   - Sweden
   
-  - - Primary Europa. Industrial countries.
+  - - Primary Europe. Industrial countries.
 
 
 
