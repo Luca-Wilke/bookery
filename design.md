@@ -37,4 +37,4 @@ bot_toast,
 flutter_toast, 
 introduction_screen, 
 intro_slider, 
-sequence_animations, 
+sequence_animations
