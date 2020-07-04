@@ -6,7 +6,7 @@
 
 **Framework**: Flutter
 
-**Programming** language: Dart
+**Programming language**: Dart
 
 **Version management**: Git
 
