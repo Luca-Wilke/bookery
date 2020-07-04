@@ -12,8 +12,6 @@
 
 **Backup Server**: Github
 
-
-
 ## Packages
 
 | package name       | package description                                              | status    | use case                                                                                         |
@@ -28,3 +26,4 @@
 | getwidget          | ui and widget library                                            | important | beautiful ui design                                                                              |
 | redux              | dart redux architecture implementation                           | important | software architecture                                                                            |
 | flutter_redux      | dart reduc architecture implementation extended                  | important | software architecture                                                                            |
+| firebase packages  | networking, authentification, database, firestore, etc.          | important | networking, authentification, database, firestore, etc.                                          |
