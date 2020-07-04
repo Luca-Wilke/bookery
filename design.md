@@ -29,12 +29,12 @@
 | firebase packages  | networking, authentification, database, firestore, etc.          | important | networking, authentification, database, firestore, etc.                                          |
 
 
-animations
-simple_animations
-nice_intro
-intro_views
-bot_toast
-flutter_toast
-introduction_screen
-intro_slider
-sequence_animations
+animations, 
+simple_animations, 
+nice_intro, 
+intro_views, 
+bot_toast, 
+flutter_toast, 
+introduction_screen, 
+intro_slider, 
+sequence_animations, 
