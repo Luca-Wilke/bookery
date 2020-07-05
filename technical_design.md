@@ -28,13 +28,10 @@
 | flutter_redux      | dart reduc architecture implementation extended                  | important | software architecture                                                                            |
 | firebase packages  | networking, authentification, database, firestore, etc.          | important | networking, authentification, database, firestore, etc.                                          |
 
-
 animations, 
 simple_animations, 
 nice_intro, 
 intro_views, 
-bot_toast, 
-flutter_toast, 
 introduction_screen, 
 intro_slider, 
 sequence_animations, 
@@ -42,4 +39,3 @@ theme_provider,
 animated_theme_switcher,
 persist_theme,
 dynamic_theme,
-
