@@ -17,6 +17,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.3
 
+  ###################
+  #IMPORTANT PACKAGES
+  ###################
+
   #google fonts to dynamically load and use free available fonts by the google fonts api
   #android, ios
   google_fonts: ^1.1.0
@@ -33,6 +37,24 @@ dependencies:
   #android, ios, web
   redux: ^4.0.0
   flutter_redux: ^0.6.0
+
+  #firebase libraries
+  #android, ios, web
+  firebase_auth: ^0.16.1
+  google_sign_in: ^4.5.1
+  #todo: install other required firebase packages like firestore
+
+  ###############
+  #EXTRA PACKAGES
+  ###############
+
+  #todo: install and choose extra packages
+
+  ##################
+  #OPTIONAL PACKAGES
+  ##################
+
+  #todo: install and choose optional packages
 
 
 dev_dependencies:
