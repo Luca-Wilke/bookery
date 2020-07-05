@@ -1,4 +1,4 @@
-package com.example.bookery
+package com.anthracite.bookery
 
 import io.flutter.embedding.android.FlutterActivity
 
