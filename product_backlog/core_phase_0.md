@@ -20,6 +20,8 @@ Subtasks for each feature are documented at [Trello](https://trello.com/b/QVR689
 
 - project documents
 
+- getwidget library learn
+
 
 
 ### Sprint 1
@@ -37,6 +39,8 @@ Deadline: Friday, 10.07.2020
 4. get app to work
 
 5. update project documents
+
+6. learn getwidget library
 
 
 
