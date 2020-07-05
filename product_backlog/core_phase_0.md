@@ -22,6 +22,8 @@ Subtasks for each feature are documented at [Trello](https://trello.com/b/QVR689
 
 - getwidget library learn
 
+- choose packages
+
 
 
 ### Sprint 1
@@ -41,6 +43,8 @@ Deadline: Friday, 10.07.2020
 5. update project documents
 
 6. learn getwidget library
+
+7. choose packages
 
 
 

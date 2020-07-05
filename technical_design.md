@@ -37,4 +37,9 @@ bot_toast,
 flutter_toast, 
 introduction_screen, 
 intro_slider, 
-sequence_animations
+sequence_animations, 
+theme_provider,
+animated_theme_switcher,
+persist_theme,
+dynamic_theme,
+
