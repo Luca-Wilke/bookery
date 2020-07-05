@@ -24,6 +24,8 @@ Subtasks for each feature are documented at [Trello](https://trello.com/b/QVR689
 
 - choose packages
 
+- responsible
+
 
 
 ### Sprint 1
@@ -45,6 +47,8 @@ Deadline: Friday, 10.07.2020
 6. learn getwidget library
 
 7. choose packages
+
+8. do research about responsible app development
 
 
 
