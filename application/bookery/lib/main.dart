@@ -9,7 +9,7 @@ import 'package:bookery/reducers/app_reducer.dart';
 void main() {
 
   final store = Store<AppState>(
-    reducer,
+    appReducer,
     initialState: AppState.initial()
   );
 

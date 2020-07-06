@@ -22,7 +22,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    String _initialRoute = store.state.navigation.routes.last; //last entry of routes property of navigation object
+    String _initialRoute = store.state.navigationState.routes.last; //last entry of routes property of navigation object
 
     return StoreProvider<AppState>(
       store: this.store,

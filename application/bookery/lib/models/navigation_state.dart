@@ -6,16 +6,24 @@ import 'package:bookery/routes.dart';
 String _initialRoute = AppRoutes.launch;
 
 @immutable
-class Navigation {
+class NavigationState {
 
   //route name stack. current route: last entry
   final List<String> routes;
 
-  Navigation({
+  NavigationState({
     this.routes
   });
+  
+  NavigationState copyWith({
+    List<String> routes
+  }) {
+    return NavigationState(
+      routes: routes ?? this.routes
+    );
+  }
 
-  factory Navigation.initial() => Navigation(
+  factory NavigationState.initial() => NavigationState(
     routes: List<String>()..add(_initialRoute)
   );
 

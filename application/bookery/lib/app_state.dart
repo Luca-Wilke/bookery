@@ -1,30 +1,30 @@
 import 'package:meta/meta.dart';
 
-import 'package:bookery/models/user.dart';
-import 'package:bookery/models/navigation.dart';
+import 'package:bookery/models/user_state.dart';
+import 'package:bookery/models/navigation_state.dart';
 
 @immutable
 class AppState {
 
-  final User user;
-  final Navigation navigation;
+  final UserState userState;
+  final NavigationState navigationState;
 
   AppState({
-    this.user,
-    this.navigation
+    this.userState,
+    this.navigationState
   });
 
   factory AppState.initial() => AppState(
-    user: User.initial(),
-    navigation: Navigation.initial()
+    userState: UserState.initial(),
+    navigationState: NavigationState.initial()
   );
 
   AppState copyWith({
-    User user,
-    Navigation navigation
+    UserState user,
+    NavigationState navigation
   }) => AppState(
-    user: user ?? this.user,
-    navigation: navigation ?? this.navigation
+    userState: user ?? this.userState,
+    navigationState: navigation ?? this.navigationState
   );
 
 }
