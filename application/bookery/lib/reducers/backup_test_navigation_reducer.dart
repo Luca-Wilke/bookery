@@ -1,7 +1,7 @@
 import 'package:redux/redux.dart';
 
 import 'package:bookery/actions/navigation_actions.dart';
-import 'package:bookery/models/navigation_state.dart';
+import 'package:bookery/models/backup_test_navigation_state.dart';
 
 final navigationReducer = combineReducers<NavigationState>([
   TypedReducer<NavigationState, NavigationPushAction>(navigationPushReducer)

@@ -22,8 +22,6 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    String _initialRoute = store.state.navigationState.routes.last; //last entry of routes property of navigation object
-
     return StoreProvider<AppState>(
       store: this.store,
       child: MaterialApp(
@@ -33,7 +31,7 @@ class App extends StatelessWidget {
           AppRoutes.signIn: (context) => SignInView(),
           AppRoutes.home: (context) => HomeView()
         },
-        initialRoute: _initialRoute
+        initialRoute: AppRoutes.launch
       )
     );
   }
