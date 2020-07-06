@@ -4,7 +4,7 @@ import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
 import 'package:bookery/app_state.dart';
-import 'package:bookery/routes.dart';
+import 'package:bookery/app_routes.dart';
 import 'package:bookery/ui/screens/home/home_view.dart';
 import 'package:bookery/ui/screens/launch/launch_view.dart';
 import 'package:bookery/ui/screens/sign_in/sign_in_view.dart';
@@ -26,12 +26,13 @@ class App extends StatelessWidget {
       store: this.store,
       child: MaterialApp(
         routes: {
-          AppRoutes.launch: (context) => LaunchView(),
-          AppRoutes.signUp: (context) => SignUpView(),
-          AppRoutes.signIn: (context) => SignInView(),
-          AppRoutes.home: (context) => HomeView()
+          AppRoutes.routes["launch"].name: (context) => LaunchView(),
+          AppRoutes.routes["signUp"].name: (context) => SignUpView(),
+          AppRoutes.routes["signIn"].name: (context) => SignInView(),
+          AppRoutes.routes["home"].name: (context) => HomeView()
         },
-        initialRoute: AppRoutes.launch
+        initialRoute: AppRoutes.routes["launch"].name,
+        onGenerateRoute: AppRoutes.generateRoute
       )
     );
   }

@@ -4,5 +4,5 @@ import 'package:meta/meta.dart';
 
 @immutable
 class Keys {
-  static final navigatorKey = GlobalKey<NavigatorState>();
+  static final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 }
