@@ -1,3 +1,4 @@
+import 'package:bookery/middleware/navigation_middleware.dart';
 import 'package:flutter/material.dart';
 
 import 'package:redux/redux.dart';
@@ -11,7 +12,7 @@ void main() {
   final store = Store<AppState>(
     appReducer,
     initialState: AppState.initial(),
-    middleware: [],
+    middleware: []..addAll(createNavigationMiddleware())
   );
 
   runApp(App(store: store));

@@ -31,7 +31,7 @@ class Router {
     //either predefined builder widget in routes map or default route on error
     var _builder = routes[settings.name].builder ?? (_) => Scaffold(
       body: Center(
-        child: Text("No route defined for {$settings.name}")
+        child: Text("Error. No route defined for {$settings.name}")
       )
     );
     

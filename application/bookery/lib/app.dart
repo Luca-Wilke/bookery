@@ -1,3 +1,5 @@
+import 'package:bookery/services/navigation_service/navigation_service.dart';
+import 'package:bookery/services/navigation_service/route_aware_widget.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_redux/flutter_redux.dart';
@@ -26,13 +28,14 @@ class App extends StatelessWidget {
       store: this.store,
       child: MaterialApp(
         routes: {
-          Router.routes["launch"].name: (context) => LaunchView(),
-          Router.routes["signUp"].name: (context) => SignUpView(),
-          Router.routes["signIn"].name: (context) => SignInView(),
-          Router.routes["home"].name: (context) => HomeView()
+          RouteNames.launch: (context) => LaunchView(),
+          RouteNames.signUp: (context) => SignUpView(),
+          RouteNames.signIn: (context) => SignInView(),
+          RouteNames.home: (context) => HomeView()
         },
-        initialRoute: Router.routes["launch"].name,
-        onGenerateRoute: Router.generateRoute
+        navigatorKey: NavigationService.navigatorKey,
+        navigatorObservers: [routeObserver],
+        onGenerateRoute: (RouteSettings settings) => NavigationService.getRoute(settings) 
       )
     );
   }
