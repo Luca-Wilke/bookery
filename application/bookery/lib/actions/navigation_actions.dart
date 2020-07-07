@@ -8,9 +8,7 @@ class NavigationPushAction {
 }
 
 @immutable
-class NavigationPopAction {
-
-}
+class NavigationPopAction {}
 
 @immutable
 class NavigationReplaceAction {
