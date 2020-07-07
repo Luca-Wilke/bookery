@@ -5,7 +5,7 @@ import 'package:bookery/ui/screens/sign_up/sign_up_view.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class AppRoutes {
+class Router {
   static Map<String, AppRoute> routes = {
     "launch": AppRoute(
       name: "/",
@@ -26,8 +26,15 @@ class AppRoutes {
   };
 
   static Route<dynamic> generateRoute(RouteSettings settings) {
+    //either predefined builder widget in routes map or default route on error
+    var _builder = routes[settings.name].builder ?? (_) => Scaffold(
+      body: Center(
+        child: Text("No route defined for {$settings.name}")
+      )
+    );
+    
     return MaterialPageRoute(
-      builder: (context) => routes[settings.name].builder
+      builder: (context) => _builder
     );
   }
 }

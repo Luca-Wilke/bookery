@@ -1,9 +1,9 @@
 import 'package:meta/meta.dart';
 
-import 'package:bookery/app_routes.dart';
+import 'package:bookery/router.dart';
 
 //helper variables
-String _initialRoute = AppRoutes.routes["launch"].name;
+String _initialRoute = Router.routes["launch"].name;
 
 @immutable
 class NavigationState {
