@@ -14,7 +14,7 @@ class LaunchView extends StatelessWidget {
       builder: (context, model) {
         return RaisedButton(
           onPressed: () {
-            Navigator.pushNamed(context, Router.routes["home"].name);
+            Navigator.pushNamed(context, RouteNames.home);
           },
           child: Text("Launch")
         );
