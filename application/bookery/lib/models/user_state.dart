@@ -7,8 +7,8 @@ class UserState {
   final String name;
 
   UserState({
-    this.uid,
-    this.name,
+    @required this.uid,
+    @required this.name,
   });
 
   UserState copyWith({

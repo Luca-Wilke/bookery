@@ -1,8 +1,4 @@
-import 'package:bookery/actions/navigation_actions.dart';
-import 'package:bookery/services/navigation_service/navigation_service.dart';
-import 'package:redux/redux.dart';
-
-import 'package:bookery/app_state.dart';
+import 'package:bookery/library.dart';
 
 List<Middleware<AppState>> createNavigationMiddleware() {
   return [

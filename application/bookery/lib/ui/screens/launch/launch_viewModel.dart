@@ -7,12 +7,12 @@ class LaunchViewModel {
   final String name;
 
   LaunchViewModel({
-    this.name
+    this.name,
   });
 
   //return ViewModel from current app state containing all data needed for the view to display it
   static LaunchViewModel fromStore(Store<AppState> store) => LaunchViewModel(
-    name: store.state.userState.name ?? "Unknown"
+    name: store.state.userState.name ?? "Unknown",
   );
 
 }

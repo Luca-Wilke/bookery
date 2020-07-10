@@ -1,4 +1,5 @@
 import 'package:bookery/app_routes.dart';
+import 'package:bookery/models/book_search_state.dart';
 import 'package:meta/meta.dart';
 
 import 'package:bookery/models/user_state.dart';
@@ -8,23 +9,28 @@ class AppState {
 
   final UserState userState;
   final List<String> routes;
+  final BookSearchState bookSearchState;
 
   AppState({
-    this.userState,
-    this.routes
+    @required this.userState,
+    @required this.routes,
+    @required this.bookSearchState
   });
 
   factory AppState.initial() => AppState(
     userState: UserState.initial(),
-    routes: const [AppRoutes.launch]
+    routes: [AppRoutes.launch],
+    bookSearchState: BookSearchState.initial()
   );
 
   AppState copyWith({
     UserState user,
-    List<String> routes
+    List<String> routes,
+    BookSearchState bookSearchState
   }) => AppState(
     userState: user ?? this.userState,
-    routes: routes ?? this.routes
+    routes: routes ?? this.routes,
+    bookSearchState: bookSearchState ?? this.bookSearchState
   );
 
 }

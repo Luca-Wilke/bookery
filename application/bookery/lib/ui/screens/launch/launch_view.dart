@@ -1,24 +1,23 @@
-import 'package:flutter/material.dart';
-
-import 'package:flutter_redux/flutter_redux.dart';
-
-import 'package:bookery/ui/screens/launch/launch_viewModel.dart';
-import 'package:bookery/app_state.dart';
-import 'package:bookery/app_routes.dart';
+import 'package:bookery/library.dart';
 
 class LaunchView extends StatelessWidget {
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context) 
+  {
     return StoreConnector<AppState, LaunchViewModel>(
       converter: (store) => LaunchViewModel.fromStore(store),
       builder: (context, model) {
-        return RaisedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.home);
-          },
-          child: Text("Launch")
+        return Scaffold(
+          body: SafeArea(
+            child: RaisedButton(onPressed: () {
+              StoreProvider.of<AppState>(context).dispatch(NavigationPushAction(route: AppRoutes.home));
+            },
+            child: Text(I18n.of(context).greet))
+          )
         );
       }
     ); 
   }
+  
 }

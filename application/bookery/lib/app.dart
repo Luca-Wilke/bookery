@@ -1,12 +1,6 @@
-import 'package:bookery/config/app_config.dart';
-import 'package:bookery/services/navigation_service/navigation_service.dart';
-import 'package:bookery/services/navigation_service/route_aware_widget.dart';
-import 'package:flutter/material.dart';
+import 'package:bookery/generated/i18n.dart';
 
-import 'package:flutter_redux/flutter_redux.dart';
-import 'package:redux/redux.dart';
-
-import 'package:bookery/app_state.dart';
+import 'library.dart';
 
 class App extends StatelessWidget {
 
@@ -20,15 +14,30 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
+    final i18n = I18n.delegate;
+
     return StoreProvider<AppState>(
       store: this.store,
       child: MaterialApp(
+
         //meta preferences
         title: AppConfig.name,
+
         //routes
         navigatorKey: NavigationService.navigatorKey,
-        navigatorObservers: [routeObserver],
-        onGenerateRoute: (RouteSettings settings) => NavigationService.getRoute(settings) 
+        onGenerateRoute: (RouteSettings settings) => NavigationService.getRoute(settings),
+
+        //internalization (i18n)
+        localizationsDelegates: [
+          i18n,
+          GlobalMaterialLocalizations.delegate,
+          GlobalWidgetsLocalizations.delegate
+        ],
+        supportedLocales: i18n.supportedLocales,
+        localeResolutionCallback: i18n.resolution(
+          fallback: new Locale("en", "GB")
+        ),
+
       )
     );
   }
