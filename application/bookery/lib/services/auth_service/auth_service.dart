@@ -21,6 +21,19 @@ class AuthService {
     Provider.google: "google.com"
   };
 
+  static Future<int> getProviderCount() async {
+    FirebaseUser user;
+    try {
+      await auth.currentUser()..reload();
+      user = await auth.currentUser();
+      return user.providerData.length;
+    } catch (e) {
+      logger.e("FAILURE. Could not get the number of providers linked to firebase user {$user}. \n\n {$e} \n\n Error object below.");
+      print(e);
+      return 0;
+    }
+  }
+
   static Future<bool> userExists() async {
     try {
       FirebaseUser user = await auth.currentUser();

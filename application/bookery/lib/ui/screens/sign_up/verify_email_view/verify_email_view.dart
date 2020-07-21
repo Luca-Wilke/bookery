@@ -1,5 +1,6 @@
 import 'package:bookery/library.dart';
 import 'package:bookery/services/auth_service/providers/email.dart';
+import 'package:bookery/services/navigation_service/navigation_service.dart';
 
 class VerifyEmailView extends StatefulWidget {
   @override
@@ -46,8 +47,45 @@ class _VerifyEmailViewState extends State<VerifyEmailView> {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      _verified ? "Your email is verified!" : "Please verify your email address."
+    return Scaffold(
+      body: SafeArea(
+        child: AnimatedContainer(
+          duration: Duration(seconds: 1),
+          curve: Curves.linear,
+          constraints: BoxConstraints.expand(),
+          color: _verified ? 
+            Colors.green[600] : //email is verified. green background 
+            Colors.red[600], //email is not verified. red background
+          child: _verified ?
+            Column(
+
+              children: <Widget>[
+                Text(
+                  "Successfully verified!"
+                ),
+                RaisedButton(
+                  child: Text("Finish."),
+                  onPressed: () {
+                    NavigationService.navigatorKey.currentState.pushReplacementNamed(
+                      AppRoutes.launch
+                    );
+                  }
+                )
+              ],
+            ) :
+            Column(
+              children: <Widget>[
+                Text(
+                  "Verify your email address!"
+                ),
+                Text(
+                  "Please check your spam folder."
+                ),
+              ],
+            ),
+        ),
+      ),
     );
   }
+
 }

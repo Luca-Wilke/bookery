@@ -13,13 +13,18 @@ enum SignInWithEmailAndPasswordResult {
 class AuthProviderEmail {
 
   static Future<bool> emailIsVerified() async {
-    //TODO error catching and null checking
-    //update auth instance
-    await AuthService.auth.currentUser()..reload();
-    //get current user
-    FirebaseUser user = await AuthService.auth.currentUser();
-    //return is email verified ? true : false
-    return user.isEmailVerified;
+    try {
+      //update auth instance
+      await AuthService.auth.currentUser()..reload();
+      //get current user
+      FirebaseUser user = await AuthService.auth.currentUser();
+      //return is email verified ? true : false
+      return user.isEmailVerified;
+    } catch (e) {
+      logger.e("An error occurred while trying to check if email is verified. Error object below. \n\n");
+      print(e);
+      return false;
+    }
   }
 
   static Future<SignUpWithEmailAndPasswordResult> signUpWithEmailAndPassword({
