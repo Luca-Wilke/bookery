@@ -1,18 +1,16 @@
-import 'package:redux/redux.dart';
-
-import 'package:bookery/app_state.dart';
+import 'package:bookery/library.dart';
+import 'package:bookery/services/services_library.dart';
 
 class LaunchViewModel {
 
-  final String name;
+  LaunchViewModel();
 
-  LaunchViewModel({
-    this.name,
-  });
-
-  //return ViewModel from current app state containing all data needed for the view to display it
-  static LaunchViewModel fromStore(Store<AppState> store) => LaunchViewModel(
-    name: store.state.userState.name ?? "Unknown",
-  );
+  void navigateToNextView() async {
+    NavigationService.navigatorKey.currentState.pushReplacementNamed(
+      await AuthService.userExists() ? 
+        AppRoutes.signIn : 
+        AppRoutes.signUp
+    );
+  }
 
 }

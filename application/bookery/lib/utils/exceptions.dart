@@ -1,30 +1,53 @@
 import 'package:bookery/library.dart';
-import 'package:meta/meta.dart';
+import 'package:bookery/utils/util_library.dart';
 
-class FetchBooksByQueryFailedException implements Exception {
-  
-  String message;
-  String url;
-
-  FetchBooksByQueryFailedException({
-    @required this.message,
-    @required this.url
-  }) {
-    logger.e(this.runtimeType.toString() + "\n\n" + "message: {$message}" + "\n\n" + "url: {$url}");
-  }
-
+void _printError({
+  @required String message,
+  dynamic error
+}) {
+  logger.e(
+    message,
+    error ?? null,
+    StackTrace.current
+  );
 }
 
-class FetchBookCoverFailedException implements Exception {
-
+class NetworkingError implements Exception {
   String message;
-  Object exception;
 
-  FetchBookCoverFailedException({
-    @required this.message,
-    @required this.exception
-  }) {
-    logger.e(this.runtimeType.toString() + "\n\n" + "message: {$message}" + "\n\n" + "exception object: {$exception}");
+  NetworkingError({@required this.message}) {
+    _printError(
+      message: "NETWORKING ERROR. \n\n {$message}",
+      error: this
+    );
   }
+}
 
+class AuthenticationError implements Exception {
+  String message;
+
+  AuthenticationError({@required this.message}) {
+    _printError(
+      message: "AUTHENTICATION ERROR. \n\n {$message}",
+      error: this
+    );
+  }
+}
+
+enum MemoryErrorType {
+  keyIsNull,
+  valueIsNull,
+  keyNotFound
+}
+
+class MemoryError implements Exception {
+  String message;
+  MemoryErrorType type;
+
+  MemoryError({@required this.message, @required this.type}) {
+    _printError(
+      message: "MEMORY ERROR. TYPE: {$type} \n\n {$message}",
+      error: this
+    );
+  }
 }

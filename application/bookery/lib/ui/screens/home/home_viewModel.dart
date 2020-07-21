@@ -1,18 +1,29 @@
-import 'package:redux/redux.dart';
-
-import 'package:bookery/app_state.dart';
+import 'package:bookery/library.dart';
+import 'package:bookery/services/services_library.dart';
+import 'package:bookery/utils/util_library.dart';
 
 class HomeViewModel {
 
-  final String name;
+  HomeViewModel();
 
-  HomeViewModel({
-    this.name
-  });
+  void deleteAccount() async {
+    try {
+      bool result = await AuthService.userDelete(password: "Halloduda123!?");
+      if (result == false) {
+        logger.w("Deleting account failed. Result is false.");
+        return;
+      }
+      //successfully deleted firebase user
+      navigateToSignUpView();
+    } catch (e) {
+      logger.w("Deleting account failed. Error has been catched: \n\n {$e}");
+    }
+  } 
 
-  //return ViewModel from current app state containing all data needed for the view to display it
-  static HomeViewModel fromStore(Store<AppState> store) => HomeViewModel(
-    name: store.state.userState.name ?? "Unknown"
-  );
+  void navigateToSignUpView() {
+    NavigationService.navigatorKey.currentState.pushReplacementNamed(
+      AppRoutes.signUp
+    );
+  }
 
 }

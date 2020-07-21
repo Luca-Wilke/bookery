@@ -1,23 +1,26 @@
 import 'package:bookery/library.dart';
+import 'package:bookery/ui/screens/launch/launch_viewModel.dart';
+import 'package:flutter/scheduler.dart';
 
 class LaunchView extends StatelessWidget {
+
+  static LaunchViewModel _model = LaunchViewModel();
 
   @override
   Widget build(BuildContext context) 
   {
-    return StoreConnector<AppState, LaunchViewModel>(
-      converter: (store) => LaunchViewModel.fromStore(store),
-      builder: (context, model) {
-        return Scaffold(
-          body: SafeArea(
-            child: RaisedButton(onPressed: () {
-              StoreProvider.of<AppState>(context).dispatch(NavigationPushAction(route: AppRoutes.home));
-            },
-            child: Text(I18n.of(context).greet))
-          )
-        );
-      }
-    ); 
+    //call _onBuildFinished function when widget building has been completed
+    SchedulerBinding.instance.addPostFrameCallback((_) => _onBuildFinished() );
+
+    //actual ui building code
+    return Scaffold(
+      body: SafeArea(
+        child: Container()
+      )
+    );
   }
-  
+
+  //either navigate to signin or signup screen (does user have an bookery account yet?)
+  void _onBuildFinished() => _model.navigateToNextView();
+
 }

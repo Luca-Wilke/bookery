@@ -1,5 +1,6 @@
+import 'package:bookery/ui/screens/sign_up/verify_email_view/verify_email_view.dart';
+import 'package:bookery/utils/logger.dart';
 import 'package:flutter/material.dart';
-
 import 'package:bookery/app_routes.dart';
 import 'package:bookery/ui/screens/error/error_view.dart';
 import 'package:bookery/ui/screens/home/home_view.dart';
@@ -14,6 +15,9 @@ class NavigationService {
   static final GlobalKey<NavigatorState> navigatorKey = new GlobalKey<NavigatorState>();
 
   static PageRoute getRoute(RouteSettings settings) {
+
+    logger.i("Navigating to {$settings.name}.");
+
     switch (settings.name) {
       case AppRoutes.launch:
         return SlideFromRightRoute(page: LaunchView());
@@ -27,8 +31,12 @@ class NavigationService {
       case AppRoutes.home:
         return SlideFromLeftRoute(page: HomeView());
         break;
+      case AppRoutes.verifyEmail:
+        return SlideFromLeftRoute(page: VerifyEmailView());
+        break;
       default: 
         return MaterialPageRoute(builder: (context) => ErrorView(), settings: RouteSettings(arguments: settings.name));
     }
   }
+  
 }

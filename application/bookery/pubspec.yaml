@@ -29,37 +29,38 @@ dependencies:
 
   #auto size text to automatically increase / decrease the font size to fit the maximum number of lines and avoid out of space exceptions
   #android, ios, web
-  #auto_size_text: ^2.1.0
+  auto_size_text: ^2.1.0
 
   #getwidget is a ui / widget library
   #android, ios, web
   getwidget: ^1.1.0
 
-  #redux libraries to use a redux software architecture in flutter
-  #android, ios, web
-  redux: ^4.0.0
-  flutter_redux: ^0.6.0
-  redux_thunk: ^0.3.0
-  #redux_api_middleware: ^0.2.1
-
   #firebase libraries
   #android, ios, web
-  #firebase_auth: ^0.16.1
-  #google_sign_in: ^4.5.1
+  firebase_auth: ^0.16.1
+  google_sign_in: ^4.5.1
   #todo: install other required firebase packages like firestore
 
   #networking
-  #android, ios, web
+  #android, ios
   http: ^0.12.1
 
   #logging
   #android, ios, web
   logger: ^0.9.1
-  redux_logging: ^0.4.0
 
   ###############
   #EXTRA PACKAGES
   ###############
+
+  #device info and hardware + memory
+  #android, ios
+  #device_info: ^0.4.2+4
+  flutter_secure_storage: ^3.3.3
+
+  #sign in with apple
+  #ios
+  apple_sign_in: ^0.1.0
 
   #todo: install and choose extra packages
 

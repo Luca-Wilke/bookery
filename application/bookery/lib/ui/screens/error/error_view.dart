@@ -1,4 +1,5 @@
 import 'package:bookery/library.dart';
+import 'package:bookery/utils/util_library.dart';
 
 class ErrorView extends StatelessWidget {
 
@@ -42,7 +43,7 @@ class ErrorView extends StatelessWidget {
   }
 
   void logError(String routeName) {
-    logger.e("Route name $routeName does not exist.");
+    logger.e("Route name $routeName does not exist.", null, StackTrace.current);
   }
 
 }
