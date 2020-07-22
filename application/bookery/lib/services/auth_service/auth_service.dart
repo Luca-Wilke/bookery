@@ -1,4 +1,3 @@
-import 'package:bookery/services/secure_storage_service/secure_storage_sections/secure_storage_auth.dart';
 import 'package:bookery/utils/util_library.dart';
 import 'package:bookery/services/services_library.dart';
 
@@ -34,9 +33,11 @@ class AuthService {
     }
   }
 
-  static Future<bool> userExists() async {
+  static Future<bool> isUserSignedUp() async {
     try {
       FirebaseUser user = await auth.currentUser();
+
+      await UserService.updateUser(user);
 
       logger.i("Check whether user has been signed up. Result: {$user}");
 
@@ -99,6 +100,8 @@ class AuthService {
 
       await user.unlinkFromProvider(provId);
       await user.delete();
+
+      FirestoreService.deleteUser(user.uid);
 
       logger.i("Successfully deleted firebase user with provider id {$provId}");
 

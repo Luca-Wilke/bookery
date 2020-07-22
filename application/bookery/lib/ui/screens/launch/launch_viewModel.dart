@@ -12,7 +12,7 @@ class LaunchViewModel {
     String nextView;
 
     try {
-      if (await AuthService.userExists()) {
+      if (await AuthService.isUserSignedUp()) {
         if (await SecureStorageAuthSection.getProvider() == Provider.emailAndPassword) {
           if (await AuthProviderEmail.emailIsVerified()) {
             //firebase user exists, user has been signed in via email and password and email is verified: to sign in screen

@@ -1,3 +1,4 @@
+import 'package:bookery/models/user.dart';
 import 'package:bookery/services/services_library.dart';
 import 'package:bookery/utils/util_library.dart';
 import 'package:meta/meta.dart';
@@ -41,6 +42,13 @@ class AuthProviderEmail {
 
       await user.sendEmailVerification();
 
+      await FirestoreService.createUser(new User(
+        uid: user.uid,
+        name: "Max Mustermann" //TODO not hardcoded
+      ));
+
+      await UserService.updateUser(user);
+
       logger.i("Bookery user {$user} has been signed up with email and password and confirmation email has been sent.");
 
       return SignUpWithEmailAndPasswordResult.success;
@@ -62,6 +70,8 @@ class AuthProviderEmail {
       );
 
       FirebaseUser user = result.user;
+
+      await UserService.updateUser(user);
 
       logger.i(" user {Bookery user {$user} has been signed in with email password.");
 

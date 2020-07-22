@@ -1,3 +1,4 @@
+import 'package:bookery/models/user.dart';
 import 'package:bookery/services/secure_storage_service/secure_storage_sections/secure_storage_auth.dart';
 import 'package:bookery/utils/util_library.dart';
 import 'package:bookery/services/services_library.dart';
@@ -57,6 +58,11 @@ class AuthProviderGoogle {
 
       print("Google credentials has been stored successfully!");
 
+      await FirestoreService.createUser(User(
+        uid: result.user.uid,
+        name: "Max Mustermann" //TODO not hardcoded
+      ));
+
       return SignUpWithGoogleResult.success;
 
     } catch (e) {
@@ -96,6 +102,9 @@ class AuthProviderGoogle {
       }
 
       logger.i("User has been signed in silently with Google.");
+
+      await UserService.updateUser(await AuthService.auth.currentUser());
+      
       return SignInWithGoogleSilentlyResult.success;
     } catch (e) {
       throw new AuthenticationError(message: e.toString());

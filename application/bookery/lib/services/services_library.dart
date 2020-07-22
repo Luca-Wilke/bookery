@@ -8,6 +8,7 @@ export 'package:bookery/services/auth_service/auth_service.dart';
 
 export 'package:firebase_auth/firebase_auth.dart';
 export 'package:google_sign_in/google_sign_in.dart';
+export 'package:cloud_firestore/cloud_firestore.dart';
 
 export 'package:bookery/services/auth_service/providers/apple.dart';
 export 'package:bookery/services/auth_service/providers/email.dart';
@@ -15,3 +16,8 @@ export 'package:bookery/services/auth_service/providers/google.dart';
 export 'package:bookery/services/auth_service/providers/twitter.dart';
 
 export 'package:bookery/services/secure_storage_service/secure_storage_service.dart';
+export 'package:bookery/services/secure_storage_service/secure_storage_sections/secure_storage_auth.dart';
+
+export 'package:bookery/services/firestore_service/firestore_service.dart';
+
+export 'package:bookery/services/auth_service/user_service.dart';

@@ -51,3 +51,14 @@ class MemoryError implements Exception {
     );
   }
 }
+
+class FirestoreError implements Exception {
+  String message;
+
+  FirestoreError({@required this.message}) {
+    _printError(
+      message: "FIRESTORE ERROR. \n\n {$message}",
+      error: this
+    );
+  }
+}
