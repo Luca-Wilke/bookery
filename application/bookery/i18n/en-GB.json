@@ -6,5 +6,9 @@
     "signUpWithEmailAndPassword": "email and password.",
     "withWord": "with",
     "orWord": "or",
-    "nameInputHint": "What's your name?"
+    "nameInputHint": "What's your name?",
+    "noName": "Please insert your name!",
+    "nameTooShort": "Your name has to be at least four letters long. :(",
+    "nameNoSpecialCharacters": "Your name can't contain special characters. :(",
+    "nameNoSpaces": "Your name can't containt spaces! :/"
 }

@@ -48,6 +48,14 @@ class I18n implements WidgetsLocalizations {
   String get orWord => "or";
   /// "What's your name?"
   String get nameInputHint => "What's your name?";
+  /// "Please insert your name!"
+  String get noName => "Please insert your name!";
+  /// "Your name has to be at least four letters long. :("
+  String get nameTooShort => "Your name has to be at least four letters long. :(";
+  /// "Your name can't contain special characters. :("
+  String get nameNoSpecialCharacters => "Your name can't contain special characters. :(";
+  /// "Your name can't containt spaces! :/"
+  String get nameNoSpaces => "Your name can't containt spaces! :/";
 }
 
 class _I18n_en_GB extends I18n {
@@ -84,6 +92,18 @@ class _I18n_de_DE extends I18n {
   /// "Wie willst du genannt werden?"
   @override
   String get nameInputHint => "Wie willst du genannt werden?";
+  /// "Du hast dir noch keinen Namen gegeben!"
+  @override
+  String get noName => "Du hast dir noch keinen Namen gegeben!";
+  /// "Dein Name muss mindestens vier Buchstaben lang sein. :("
+  @override
+  String get nameTooShort => "Dein Name muss mindestens vier Buchstaben lang sein. :(";
+  /// "Dein Name darf keine Sonderzeichen enthalten. :/"
+  @override
+  String get nameNoSpecialCharacters => "Dein Name darf keine Sonderzeichen enthalten. :/";
+  /// "Dein Name darf keine Leerzeichen enthalten! :("
+  @override
+  String get nameNoSpaces => "Dein Name darf keine Leerzeichen enthalten! :(";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;

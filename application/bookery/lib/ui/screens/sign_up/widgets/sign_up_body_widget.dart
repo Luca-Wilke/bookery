@@ -1,5 +1,6 @@
 import 'package:bookery/library.dart';
 import 'package:bookery/services/services_library.dart';
+import 'package:bookery/ui/screens/sign_up/sign_up_viewModel.dart';
 import 'package:flutter/gestures.dart';
 
 class SignUpBodyWidget extends StatefulWidget {
@@ -96,7 +97,17 @@ class __SignUpMethodButtonState extends State<_SignUpMethodButton> {
   @override
   Widget build(BuildContext context) {
     return RaisedButton(
-      onPressed: () {},
+      onPressed: () {
+        //first, check for valid name input.
+        String error = SignUpViewModel.getErrorMessageForNameInput(SignUpViewModel.userNameInput, context);
+        if (error != "") {
+          //invalid name input. show error snackbar and return
+          SignUpViewModel.showErrorSnackbar(error, context);
+          return;
+        }
+
+        //try to sign up using the given provider
+      },
       elevation: 10.0,
       child: Row(
         children: <Widget>[

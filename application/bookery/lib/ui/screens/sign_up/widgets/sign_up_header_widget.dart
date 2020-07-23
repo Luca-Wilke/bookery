@@ -1,8 +1,9 @@
 import 'package:bookery/library.dart';
+import 'package:bookery/ui/screens/sign_up/sign_up_viewModel.dart';
 
 class SignUpHeaderWidget extends StatefulWidget {
 
-  final signUpNameInputWidget = _SignUpNameInputWidget();
+  final signUpNameInputWidget = SignUpNameInputWidget();
 
   @override
   _SignUpHeaderWidgetState createState() => _SignUpHeaderWidgetState();
@@ -42,12 +43,25 @@ class _SignUpHeaderWidgetState extends State<SignUpHeaderWidget> {
   }
 }
 
-class _SignUpNameInputWidget extends StatefulWidget {
+class SignUpNameInputWidget extends StatefulWidget {
   @override
-  __SignUpNameInputWidgetState createState() => __SignUpNameInputWidgetState();
+  _SignUpNameInputWidgetState createState() => _SignUpNameInputWidgetState();
 }
 
-class __SignUpNameInputWidgetState extends State<_SignUpNameInputWidget> {
+class _SignUpNameInputWidgetState extends State<SignUpNameInputWidget> {
+
+  final TextEditingController _controller = new TextEditingController();
+
+  @override initState() {
+    super.initState();
+  }
+
+  @override dispose() {
+    _controller.dispose();
+
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -64,16 +78,30 @@ class __SignUpNameInputWidgetState extends State<_SignUpNameInputWidget> {
         MediaQuery.of(context).size.height * 0.085
       ),
       child: TextField(
+        controller: _controller,
         //input settings
         maxLines: 1,
         maxLength: 20,
         maxLengthEnforced: true,
         expands: false,
+        //design
         style: Theme.of(context).textTheme.bodyText1,
         decoration: InputDecoration(
           hintText: I18n.of(context).nameInputHint,
-          contentPadding: EdgeInsets.only(left: 5.0),
+          contentPadding: EdgeInsets.only(left: 15.0),
         ),
+        onChanged: (input) {
+          SignUpViewModel.userNameInput = input;
+        },
+        onSubmitted: (name) {
+          String error = SignUpViewModel.getErrorMessageForNameInput(SignUpViewModel.userNameInput, context);
+          if (error != "") {
+            SignUpViewModel.showErrorSnackbar(
+              error, //error message string
+              context //build context
+            );
+          }
+        },
       ),
     );
   }

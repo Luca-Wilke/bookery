@@ -5,6 +5,8 @@ import 'package:bookery/utils/util_library.dart';
 
 class SignUpViewModel {
 
+  static String userNameInput;
+
   SignUpViewModel();
 
   //calls AuthService method to sign up with google account. Returns true when success; otherwise false
@@ -57,6 +59,32 @@ class SignUpViewModel {
 
   void navigateToEmailConfirmationView() {
     NavigationService.navigatorKey.currentState.pushReplacementNamed(AppRoutes.verifyEmail);
+  }
+
+  static String getErrorMessageForNameInput(String name, BuildContext context) {
+    if (name == "") {
+      return I18n.of(context).noName;
+    } else if (name.length < 4) {
+      return I18n.of(context).nameTooShort;
+    } else if (name.contains(" ")) {
+      return I18n.of(context).nameNoSpaces;
+    } else if (!RegExp(r"^[a-zA-Z0-9]+$").hasMatch(name)) {
+      return I18n.of(context).nameNoSpecialCharacters;
+    }
+
+    //valid input
+    return "";
+  }
+
+  static void showErrorSnackbar(String error, BuildContext context) {
+    Scaffold.of(context).showSnackBar(new SnackBar(
+      backgroundColor: Colors.red,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(25.0))
+      ),
+        duration: Duration(seconds: 2),
+        content: Text(error)
+    ));
   }
 
 }

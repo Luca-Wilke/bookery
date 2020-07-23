@@ -67,8 +67,13 @@ class App extends StatelessWidget {
           isDense: false,
           isCollapsed: false,
           filled: true,
-          border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(12.0),
+          focusedBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(16.0),
+            borderSide: BorderSide(color: Colors.blue[50])
+          ),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(32.0),
+            borderSide: BorderSide(color: Colors.blue[50])
           ),
           fillColor: Colors.blue[50],
           hintStyle: Theme.of(context).textTheme.caption

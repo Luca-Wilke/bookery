@@ -6,5 +6,9 @@
     "signUpWithEmailAndPassword": "E-Mail und Passwort.",
     "withWord": "mit",
     "orWord": "oder",
-    "nameInputHint": "Wie willst du genannt werden?"
+    "nameInputHint": "Wie willst du genannt werden?",
+    "noName": "Du hast dir noch keinen Namen gegeben!",
+    "nameTooShort": "Dein Name muss mindestens vier Buchstaben lang sein. :(",
+    "nameNoSpecialCharacters": "Dein Name darf keine Sonderzeichen enthalten. :/",
+    "nameNoSpaces": "Dein Name darf keine Leerzeichen enthalten! :("
 }
