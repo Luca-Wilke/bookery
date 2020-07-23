@@ -32,8 +32,18 @@ class I18n implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
-  /// "Welcome!"
-  String get greet => "Welcome!";
+  /// "Sign up to Bookery now!"
+  String get signUpNow => "Sign up to Bookery now!";
+  /// "New to Bookery?"
+  String get newUser => "New to Bookery?";
+  /// "I already have an account."
+  String get alreadyHaveAccount => "I already have an account.";
+  /// "Google."
+  String get signUpWithGoogle => "Google.";
+  /// "email and password."
+  String get signUpWithEmailAndPassword => "email and password.";
+  /// "with"
+  String get withWord => "with";
 }
 
 class _I18n_en_GB extends I18n {
@@ -46,9 +56,24 @@ class _I18n_en_GB extends I18n {
 class _I18n_de_DE extends I18n {
   const _I18n_de_DE();
 
-  /// "Hallo!"
+  /// "Erstelle jetzt Dein Account bei Bookery!"
   @override
-  String get greet => "Hallo!";
+  String get signUpNow => "Erstelle jetzt Dein Account bei Bookery!";
+  /// "Neu hier?"
+  @override
+  String get newUser => "Neu hier?";
+  /// "Ich habe bereits ein Account."
+  @override
+  String get alreadyHaveAccount => "Ich habe bereits ein Account.";
+  /// "Google."
+  @override
+  String get signUpWithGoogle => "Google.";
+  /// "E-Mail und Passwort."
+  @override
+  String get signUpWithEmailAndPassword => "E-Mail und Passwort.";
+  /// "mit"
+  @override
+  String get withWord => "mit";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;

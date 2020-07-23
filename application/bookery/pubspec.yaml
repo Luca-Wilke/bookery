@@ -25,7 +25,7 @@ dependencies:
 
   #google fonts to dynamically load and use free available fonts by the google fonts api
   #android, ios
-  #google_fonts: ^1.1.0
+  google_fonts: ^1.1.0
 
   #auto size text to automatically increase / decrease the font size to fit the maximum number of lines and avoid out of space exceptions
   #android, ios, web
@@ -71,9 +71,13 @@ dependencies:
   #todo: install and choose optional packages
 
 
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
 flutter:
   uses-material-design: true
+  #assets
+  assets:
+    - assets/google-icon.png 

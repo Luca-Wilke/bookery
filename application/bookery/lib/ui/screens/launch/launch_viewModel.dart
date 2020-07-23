@@ -44,7 +44,7 @@ class LaunchViewModel {
       nextView = AppRoutes.signUp;
     }
 
-    NavigationService.navigatorKey.currentState.pushReplacementNamed(nextView);
+    NavigationService.navigatorKey.currentState.pushReplacementNamed(AppRoutes.signUp); //TODO change to nextView
 
   }
 

@@ -16,3 +16,5 @@ export 'package:bookery/ui/screens/sign_up/sign_up_view.dart';
 export 'package:getwidget/getwidget.dart';
 
 export 'package:auto_size_text/auto_size_text.dart';
+
+export 'package:google_fonts/google_fonts.dart';
