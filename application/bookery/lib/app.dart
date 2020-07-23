@@ -44,13 +44,35 @@ class App extends StatelessWidget {
         //colorful / bright primary color blue
         primaryColorBrightness: Brightness.light,
         //application background color
-        scaffoldBackgroundColor: Colors.white,
+        scaffoldBackgroundColor: Colors.blue[50],
         //button theme settings
         buttonColor: Colors.blue[50],
+        buttonTheme: ButtonThemeData(
+          padding: EdgeInsets.symmetric(
+            horizontal: 20.0,
+            vertical: 10.0
+          ),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.0)
+          ),
+          buttonColor: Colors.blue[50],
+          splashColor: Colors.black12
+        ),
         //font families / font theme
-        textTheme: GoogleFonts.sourceSansProTextTheme(
+        textTheme: GoogleFonts.quicksandTextTheme(
           Theme.of(context).textTheme
-        )
+        ),
+        //input decoration
+        inputDecorationTheme: InputDecorationTheme(
+          isDense: false,
+          isCollapsed: false,
+          filled: true,
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12.0),
+          ),
+          fillColor: Colors.blue[50],
+          hintStyle: Theme.of(context).textTheme.caption
+        ),
       )
 
     );

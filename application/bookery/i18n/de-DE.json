@@ -1,8 +1,10 @@
 {
-    "signUpNow": "Erstelle jetzt Dein Account bei Bookery!",
+    "signUpNow": "Erstelle jetzt Dein Account bei Bookery",
     "newUser": "Neu hier?",
     "alreadyHaveAccount": "Ich habe bereits ein Account.",
     "signUpWithGoogle": "Google.",
     "signUpWithEmailAndPassword": "E-Mail und Passwort.",
-    "withWord": "mit"
+    "withWord": "mit",
+    "orWord": "oder",
+    "nameInputHint": "Wie willst du genannt werden?"
 }

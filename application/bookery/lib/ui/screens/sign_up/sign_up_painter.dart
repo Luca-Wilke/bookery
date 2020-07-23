@@ -64,9 +64,9 @@ class BackgroundPainter extends CustomPainter {
     lowerPath.addArc(
       Rect.fromLTRB(
         curveStartX, //left
-        0, //top 
-        curveEndX*1.5, //right 
-        size.height * (heightFactor+0.1)  //bottom
+        -(size.height*0.2), //top 
+        curveEndX*1.3, //right 
+        size.height * (heightFactor+0.06)  //bottom
       ),
       0.0,
       10
@@ -78,9 +78,9 @@ class BackgroundPainter extends CustomPainter {
     middlePath.addArc(
       Rect.fromLTRB(
         curveStartX, //left
-        0, //top 
-        curveEndX*1.3, //right 
-        size.height * (heightFactor+0.05)  //bottom
+        -(size.height*0.25), //top 
+        curveEndX*1.4, //right 
+        size.height * (heightFactor+0.03)  //bottom
       ),
       0.0,
       10
@@ -93,7 +93,7 @@ class BackgroundPainter extends CustomPainter {
       Rect.fromLTRB(
         curveStartX, //left
         -(size.height*0.25), //top 
-        curveEndX*1.4, //right 
+        curveEndX*1.5, //right 
         size.height * (heightFactor) //bottom
       ),
       0.0,

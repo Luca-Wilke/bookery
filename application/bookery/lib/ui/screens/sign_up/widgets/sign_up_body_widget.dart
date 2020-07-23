@@ -16,12 +16,6 @@ class _SignUpBodyWidgetState extends State<SignUpBodyWidget> {
       child: IntrinsicWidth(
         child: Column(
           children: <Widget>[
-            //email and password
-            new _SignUpMethodButton(
-              signUpMethodTitle: I18n.of(context).signUpWithEmailAndPassword,
-              signUpMethodIcon: Icon(Icons.email),
-            ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.01),
             //google
             new _SignUpMethodButton(
               signUpMethodTitle: I18n.of(context).signUpWithGoogle,
@@ -31,7 +25,13 @@ class _SignUpBodyWidgetState extends State<SignUpBodyWidget> {
                 height: 24.0 
               )
             ),
-            SizedBox(height: MediaQuery.of(context).size.height*0.1),
+            _buildOrText(context),
+            //email and password
+            new _SignUpMethodButton(
+              signUpMethodTitle: I18n.of(context).signUpWithEmailAndPassword,
+              signUpMethodIcon: Icon(Icons.email),
+            ),
+            SizedBox(height: MediaQuery.of(context).size.height*0.175),
             //i already have an account text button
             _buildAlreadyHaveAccountText(context)
           ],
@@ -59,6 +59,21 @@ class _SignUpBodyWidgetState extends State<SignUpBodyWidget> {
     );
   }
 
+  Widget _buildOrText(BuildContext context) {
+    return Row(children: <Widget>[
+      Expanded(
+        child: Divider()
+      ),
+      Text(
+        "    " + I18n.of(context).orWord + "    ",
+        style: Theme.of(context).textTheme.caption
+      ), 
+      Expanded(
+        child: Divider()
+      )
+    ]);
+  }
+
 }
 
 
@@ -82,10 +97,7 @@ class __SignUpMethodButtonState extends State<_SignUpMethodButton> {
   Widget build(BuildContext context) {
     return RaisedButton(
       onPressed: () {},
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(24.0),
-        side: BorderSide(color: Colors.green[300])
-      ),
+      elevation: 10.0,
       child: Row(
         children: <Widget>[
           widget.signUpMethodIcon as Widget,

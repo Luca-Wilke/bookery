@@ -32,8 +32,8 @@ class I18n implements WidgetsLocalizations {
   @override
   TextDirection get textDirection => TextDirection.ltr;
 
-  /// "Sign up to Bookery now!"
-  String get signUpNow => "Sign up to Bookery now!";
+  /// "Sign up to Bookery now"
+  String get signUpNow => "Sign up to Bookery now";
   /// "New to Bookery?"
   String get newUser => "New to Bookery?";
   /// "I already have an account."
@@ -44,6 +44,10 @@ class I18n implements WidgetsLocalizations {
   String get signUpWithEmailAndPassword => "email and password.";
   /// "with"
   String get withWord => "with";
+  /// "or"
+  String get orWord => "or";
+  /// "What's your name?"
+  String get nameInputHint => "What's your name?";
 }
 
 class _I18n_en_GB extends I18n {
@@ -56,9 +60,9 @@ class _I18n_en_GB extends I18n {
 class _I18n_de_DE extends I18n {
   const _I18n_de_DE();
 
-  /// "Erstelle jetzt Dein Account bei Bookery!"
+  /// "Erstelle jetzt Dein Account bei Bookery"
   @override
-  String get signUpNow => "Erstelle jetzt Dein Account bei Bookery!";
+  String get signUpNow => "Erstelle jetzt Dein Account bei Bookery";
   /// "Neu hier?"
   @override
   String get newUser => "Neu hier?";
@@ -74,6 +78,12 @@ class _I18n_de_DE extends I18n {
   /// "mit"
   @override
   String get withWord => "mit";
+  /// "oder"
+  @override
+  String get orWord => "oder";
+  /// "Wie willst du genannt werden?"
+  @override
+  String get nameInputHint => "Wie willst du genannt werden?";
 
   @override
   TextDirection get textDirection => TextDirection.ltr;

@@ -1,6 +1,7 @@
 import 'package:bookery/ui/screens/sign_up/sign_up_painter.dart';
 import 'package:bookery/ui/screens/sign_up/widgets/sign_up_body_widget.dart';
 import 'package:bookery/ui/screens/sign_up/widgets/sign_up_header_widget.dart';
+import 'package:bookery/ui/screens/sign_up/widgets/sign_up_middle_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -17,6 +18,7 @@ class SignUpView extends StatelessWidget {
     final double backgroundDecorationHeightFactor = 0.45;
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: CustomPaint(
           painter: BackgroundPainter(
@@ -28,8 +30,9 @@ class SignUpView extends StatelessWidget {
             child: Stack(
               alignment: Alignment.center,
               children: <Widget>[
-                SignUpHeaderWidget(
-                  startY: (backgroundDecorationHeightFactor-0.35) * MediaQuery.of(context).size.height
+                SignUpHeaderWidget(),
+                SignUpMiddleWidget(
+                  startY: (backgroundDecorationHeightFactor-0.185) * MediaQuery.of(context).size.height
                 ),
                 SignUpBodyWidget()
               ],
